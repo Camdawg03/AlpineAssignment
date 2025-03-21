@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Yet Another Project</title>
     <link rel="stylesheet" href="screen.css">
-  </head>
-  <body>
-    <h1>Home</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-    <script src="index.js"></script>
-  </body>
+    <script src="//unpkg.com/alpinejs" defer></script>
+<script src="utilities.js"></script>
+</head>
+<body>
+    <div x-data="{ names: ['Ayla', 'Ryder', 'Grey', 'Crosby', 'Peyton', 'Bailee', 'Caitlyn', 'Bradley', 'Yvonne', 'Cameron'], selectedName: '' }">
+        <button @click="selectedName = names[Math.floor(Math.random() * names.length)]">
+          Generate Random Name
+        </button>
+        <h1 x-text="selectedName"></h1>
+      </div>
+</body>
 </html>
